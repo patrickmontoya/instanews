@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../assets/fonts/OpenSans-Light.eot');
+    src: url('../../assets/fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/fonts/openSans-Light.woff2') format('woff2'),
+        url('../../assets/fonts/openSans-Light.woff') format('woff'),
+        url('../../assets/fonts/openSans-Light.ttf') format('truetype'),
+        url('../../assets/fonts/openSans-Light.svg#OpenSans-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../assets/fonts/openSansLight-Italic.eot');
+    src: url('../../assets/fonts/openSansLight-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/fonts/openSansLight-Italic.woff2') format('woff2'),
+        url('../../assets/fonts/openSansLight-Italic.woff') format('woff'),
+        url('../../assets/fonts/openSansLight-Italic.ttf') format('truetype'),
+        url('../../assets/fonts/openSansLight-Italic.svg#OpenSansLight-Italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../assets/fonts/openSans-BoldItalic.eot');
+    src: url('../../assets/fonts/openSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/fonts/openSans-BoldItalic.woff2') format('woff2'),
+        url('../../assets/fonts/openSans-BoldItalic.woff') format('woff'),
+        url('../../assets/fonts/openSans-BoldItalic.ttf') format('truetype'),
+        url('../../assets/fonts/openSans-BoldItalic.svg#OpenSans-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../assets/fonts/openSans-Bold.eot');
+    src: url('../../assets/fonts/openSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/fonts/openSans-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/openSans-Bold.woff') format('woff'),
+        url('../../assets/fonts/openSans-Bold.ttf') format('truetype'),
+        url('../../assets/fonts/openSans-Bold.svg#OpenSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html {
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $fontColor;
+}
+
+body {
+	@extend %flex;
+	background-color: #000000;
+
+	.flex-container {
+		@extend %flex;
+		min-height: 90vh;
+
+		
+	}
+
+	.logo {
+		flex-grow: 1;
+		@extend %flex
+	}
+
+	h1 {
+		color: $fontColor;
+		@extend %openSansLight;
+		font-size: 16px;
+	}
+
+	.selection-container {
+		@extend %flex;
+	}
+
+	select {
+		height: 20px;
+		width: 120px;
+		border-radius: 5px;
+	}
+
+	img {
+		width: 200px;
+	}
+
+	i {
+		@extend %openSansLight;
+		font-size: 16px;
+		margin-bottom: 50px;
+
+			h2 {
+				@extend %font-initial;
+			}
+	}
+
+	
+
+	@media screen and (min-width: $tablet) {
+
+	.flex-container {
+		flex-direction: row;
+	}
+
+	body {
+		background-color: white;
+	}
+
+}
+}

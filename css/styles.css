@@ -1,4 +1,4 @@
-
+/* 
 html {
 	font-size: 16px;
 }
@@ -16,7 +16,7 @@ body {
 	justify-content: center;
 	align-items: center;
   	height: 120vh;
- 	/*width: 100vw;*/
+ 	width: 100vw;
  	flex-direction: column;
 }
 
@@ -43,4 +43,4 @@ img {
 
 .footing {
 	margin-top: 200px;
-}
+} */

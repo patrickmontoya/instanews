@@ -1,58 +1,77 @@
-const gulp = require("gulp"); // Load Gulp!
-// Now that we've installed the uglify package we can require it:
-const uglify = require("gulp-uglify");
-const eslint = require('gulp-eslint');
-  rename = require("gulp-rename");
+const gulp = require('gulp'),
+  prettyError = require('gulp-prettyerror'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  rename = require('gulp-rename'),
+  cssnano = require('gulp-cssnano'),
+  uglify = require('gulp-uglify'),
+  eslint = require('gulp-eslint');
   
-  const sass = require("gulp-sass"),
-  autoprefixer = require("gulp-autoprefixer"),
-  cssnano = require("gulp-cssnano");
-  
-gulp.task("default", function() {
-  return gulp
-    .src("./js/*.js") // What files do we want gulp to consume?
-    .pipe(uglify()) // Call the uglify function on these files
-    .pipe(rename({ extname: ".min.js" })) // Rename the uglified file
-    .pipe(gulp.dest("./build/js")); // Where do we put the result?
-});	
+  var browserSync = require('browser-sync').create();
 
-var browserSync = require('browser-sync').create();
+// Create basic Gulp tasks
 
-gulp.task("browser-sync", function() {
-  browserSync.init({
-    server: {
-      baseDir: "./"
-    }
-  });
+gulp.task('sass', function(done) {
   gulp
-    .watch(['index.html', 'build/css/*.css', 'build/js/*.js', 'css/styles.css'])
-    .on('change', browserSync.reload);
-});
-
-gulp.task('lint', function() {
- return gulp.src("./js/*.js").pipe(eslint({
-   'rules':{
-       'quotes': [1, 'single'],
-       'semi': [1, 'always']
-   }
- }))
- 
- .pipe(eslint.format())
- // Brick on failure to be super strict
- .pipe(eslint.failOnError());
-});
-
-gulp.task("sass", function() {
-  return gulp
-    .src("./sass/style.scss")
+    .src('./sass/style.scss', { sourcemaps: true })
+    .pipe(prettyError())
     .pipe(sass())
     .pipe(
       autoprefixer({
-        browsers: ["last 2 versions"]
+        browsers: ['last 2 versions']
       })
     )
-    .pipe(gulp.dest("./build/css"))
+    .pipe(gulp.dest('./build/css'))
     .pipe(cssnano())
-    .pipe(rename("style.min.css"))
-    .pipe(gulp.dest("./build/css"));
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('./build/css'));
+
+  
+  done();
 });
+
+gulp.task('lint', function() {
+  return (gulp
+      .src(['./js/*.js'])
+      // Also need to use it here...
+      .pipe(prettyError())
+      .pipe(eslint())
+      .pipe(eslint.format())
+      .pipe(eslint.failAfterError()) );
+});
+
+gulp.task(
+  'scripts',
+  gulp.series('lint', function() {
+    return gulp
+      .src('./js/*.js')
+      .pipe(uglify())
+      .pipe(
+        rename({
+          extname: '.min.js'
+        })
+      )
+      .pipe(gulp.dest('./build/js'));
+  })
+);
+
+// Set-up BrowserSync and watch
+
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  });
+
+  gulp
+    .watch(['build/css/*.css', 'build/js/*.js'])
+    .on('change', browserSync.reload);
+});
+
+gulp.task('watch', function() {
+  gulp.watch('js/*.js', gulp.series('scripts'));
+  gulp.watch('sass/*.scss', gulp.series('sass'));
+});
+
+gulp.task('default', gulp.parallel('browser-sync', 'watch'));

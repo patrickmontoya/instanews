@@ -1,0 +1,24 @@
+$fontColor: #ffffff;
+$backGroundColor: #000000;
+$fontFamily: 'Open Sans';
+$fontWeight: '300';
+$tablet: '1000px';
+
+%flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+%openSansLight {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-style: normal; 
+}
+
+%font-initial {
+    font-style: initial;
+    font-size: 16px;
+    text-decoration: none;
+}
