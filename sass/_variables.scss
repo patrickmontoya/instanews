@@ -2,7 +2,7 @@ $fontColor: #ffffff;
 $backGroundColor: #000000;
 $fontFamily: 'Open Sans';
 $fontWeight: '300';
-$tablet: '1000px';
+$opaque: rgba(0,0,0,0.5);
 
 %flex {
     display: flex;

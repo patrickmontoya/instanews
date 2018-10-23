@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Open Sans';
     src: url('../../assets/fonts/OpenSans-Light.eot');
@@ -61,13 +62,15 @@ body {
 	.flex-container {
 		@extend %flex;
 		min-height: 90vh;
-
-		
 	}
 
 	.logo {
 		flex-grow: 1;
-		@extend %flex
+		@extend %flex;
+
+		@include desktop {
+			flex-direction: row;
+		}
 	}
 
 	h1 {
@@ -90,27 +93,44 @@ body {
 		width: 200px;
 	}
 
-	i {
-		@extend %openSansLight;
-		font-size: 16px;
-		margin-bottom: 50px;
+	h2 {
+		@extend %font-initial;
+	
+		i {
+			@extend %openSansLight;
+			font-size: 16px;
+			margin-bottom: 50px;
+		}
+	}
 
-			h2 {
-				@extend %font-initial;
-			}
+	.news-item {
+		width: 320px;
+		height: 300px;
+		position: relative;
+		background-size: cover;
 	}
 
 	
-
-	@media screen and (min-width: $tablet) {
-
-	.flex-container {
-		flex-direction: row;
 	}
 
-	body {
-		background-color: white;
+	.api-loader {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+
+		p {
+			@extend %openSansLight;
+			background-color: $opaque;
+			bottom: 0;
+			position: absolute;
+			color: white;
+			text-decoration: none;
+			margin: 0;
+			display: none;
 	}
 
-}
+	.selection {
+		min-height: 45vh;
+	}
+
 }
