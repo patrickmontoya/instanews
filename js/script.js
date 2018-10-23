@@ -1,6 +1,6 @@
 
 $('select').on('change', function() {
-$('.selection-container').addClass('selection');
+$('.flex-container').addClass('select');
 $('.api-loader').empty();
 
     console.log('test');

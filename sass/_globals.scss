@@ -58,6 +58,11 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	@extend %flex;
 	background-color: #000000;
+	margin: 0;
+
+	@include desktop {
+		align-items: flex-start;
+	}
 
 	.flex-container {
 		@extend %flex;
@@ -67,6 +72,11 @@ body {
 	.logo {
 		flex-grow: 1;
 		@extend %flex;
+
+		@include tablet {
+			flex-direction: row;
+			
+		}
 
 		@include desktop {
 			flex-direction: row;
@@ -94,24 +104,39 @@ body {
 	}
 
 	h2 {
-		@extend %font-initial;
-	
+		// @extend %font-initial;
+		
 		i {
-			@extend %openSansLight;
+				@extend %openSansLight;
 			font-size: 16px;
-			margin-bottom: 50px;
+			// margin-bottom: 50px;
 		}
 	}
 
 	.news-item {
-		width: 320px;
+		width: 100vw;
 		height: 300px;
 		position: relative;
 		background-size: cover;
+		background-position: center;
+
+		@include tablet {
+			width: 33.3vw;
+    		height: 417px;
+		}
+
+		@include desktop {
+			width: 25vw;
+		}
+
+		@include high-res {
+			width: 24.723vw;
+			height: 80vh;
+		}
 	}
 
 	
-	}
+	
 
 	.api-loader {
 		display: flex;
@@ -126,11 +151,14 @@ body {
 			color: white;
 			text-decoration: none;
 			margin: 0;
-			display: none;
+			padding: 5px;
+			// display: none;
+		}
 	}
 
-	.selection {
+	.select {
 		min-height: 45vh;
+		// transform: translate(10px, 20px);
 	}
 
 }
