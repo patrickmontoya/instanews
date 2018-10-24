@@ -13,10 +13,11 @@ body, body .flex-container, body .logo, body .selection-container {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-body h1, body h2 i, body .api-loader p {
+body h1, body .api-loader p, body .legal h2 {
   font-family: 'Open Sans';
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+  font-size: 16px; }
 
 @font-face {
   font-family: 'Open Sans';
@@ -65,7 +66,8 @@ body {
   body .logo {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
-            flex-grow: 1; }
+            flex-grow: 1;
+    margin: 20px; }
     @media (min-width: 768px) {
       body .logo {
         -webkit-box-orient: horizontal;
@@ -78,17 +80,19 @@ body {
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row; } }
+    body .logo a img {
+      width: 300px;
+      margin: 0 20px; }
   body h1 {
     color: #ffffff;
     font-size: 16px; }
+  @media (min-width: 1000px) {
+    body .selection-container {
+      margin: 0 20px; } }
   body select {
     height: 20px;
     width: 120px;
     border-radius: 5px; }
-  body img {
-    width: 200px; }
-  body h2 i {
-    font-size: 16px; }
   body .news-item {
     width: 100vw;
     height: 300px;
@@ -115,19 +119,56 @@ body {
             justify-content: space-evenly;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
+    body .api-loader a {
+      position: relative;
+      overflow: hidden; }
+      body .api-loader a:hover p {
+        bottom: 0; }
     body .api-loader p {
       background-color: rgba(0, 0, 0, 0.7);
-      bottom: 0;
+      bottom: -100%;
       position: absolute;
       color: white;
       text-decoration: none;
       margin: 0;
-      padding: 5px; }
+      padding: 5px;
+      -webkit-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out; }
+      @media (min-width: 1000px) {
+        body .api-loader p {
+          line-height: 35px; } }
   body .select {
-    min-height: 45vh; }
+    min-height: 10vh;
+    -webkit-transition: all 1s ease-in;
+    transition: all 1s ease-in; }
+    body .select .logo img {
+      -webkit-transition: all .5s ease-in;
+      transition: all .5s ease-in;
+      margin: 20px; }
+      @media (min-width: 768px) {
+        body .select .logo img {
+          width: 150px;
+          -webkit-transition: all .9s ease-in;
+          transition: all .9s ease-in; } }
+      @media (min-width: 1000px) {
+        body .select .logo img {
+          width: 100px; } }
+  body .legal h2 {
+    margin: 20px;
+    color: white; }
 
-@-webkit-keyframes grow {
-  from {
+@-webkit-keyframes shrinks {
+  0% {
+    transform: scale(1);
     -webkit-transform: scale(1); }
-  to {
-    -webkit-transform: scale(4.333); } }
+  100% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5); } }
+
+@keyframes shrinks {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1); }
+  100% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5); } }

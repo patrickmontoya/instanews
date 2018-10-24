@@ -1,8 +1,10 @@
-@-webkit-keyframes grow {
-    from {
-        -webkit-transform:scale(1);
+@keyframes shrinks {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
     }
-    to {
-        -webkit-transform:scale(4.333);
+    100% {
+        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
     }
 }

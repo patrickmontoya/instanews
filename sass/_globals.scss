@@ -1,4 +1,5 @@
 
+
 @font-face {
     font-family: 'Open Sans';
     src: url('../../assets/fonts/OpenSans-Light.eot');
@@ -71,6 +72,7 @@ body {
 
 	.logo {
 		flex-grow: 1;
+		margin: 20px;
 		@extend %flex;
 
 		@include tablet {
@@ -81,6 +83,11 @@ body {
 		@include desktop {
 			flex-direction: row;
 		}
+
+			a img {
+				width: 300px;
+				margin: 0 20px;
+			}
 	}
 
 	h1 {
@@ -91,26 +98,16 @@ body {
 
 	.selection-container {
 		@extend %flex;
+
+		@include desktop {
+			margin: 0 20px;
+		}
 	}
 
 	select {
 		height: 20px;
 		width: 120px;
 		border-radius: 5px;
-	}
-
-	img {
-		width: 200px;
-	}
-
-	h2 {
-		// @extend %font-initial;
-		
-		i {
-				@extend %openSansLight;
-			font-size: 16px;
-			// margin-bottom: 50px;
-		}
 	}
 
 	.news-item {
@@ -135,30 +132,60 @@ body {
 		}
 	}
 
-	
-	
-
 	.api-loader {
 		display: flex;
 		justify-content: space-evenly;
 		flex-wrap: wrap;
 
+		a {
+			position: relative;
+			overflow: hidden;
+
+			&:hover p {
+				bottom: 0;
+			}
+		}
+
 		p {
 			@extend %openSansLight;
 			background-color: $opaque;
-			bottom: 0;
+			bottom: -100%;
 			position: absolute;
 			color: white;
 			text-decoration: none;
 			margin: 0;
 			padding: 5px;
-			// display: none;
+			transition: all .3s ease-in-out;
+
+			@include desktop {
+				line-height: 35px;
+			}
 		}
 	}
 
 	.select {
-		min-height: 45vh;
-		// transform: translate(10px, 20px);
-	}
+		min-height: 10vh;
+		transition: all 1s ease-in;
 
+			.logo img {
+				transition: all .5s ease-in;
+				margin: 20px;
+
+				@include tablet {
+					width: 150px;
+					transition: all .9s ease-in;
+				}
+
+				@include desktop {
+					width: 100px;
+				}
+			}
+    }
+
+	.legal h2 {
+			@extend %openSansLight;
+			margin: 20px;
+			color: white;
+			
+	}	
 }
