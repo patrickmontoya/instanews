@@ -19,6 +19,22 @@ body h1, body .api-loader p, body .legal h2 {
   font-style: normal;
   font-size: 16px; }
 
+@-webkit-keyframes shrinks {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1); }
+  100% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5); } }
+
+@keyframes shrinks {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1); }
+  100% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5); } }
+
 @font-face {
   font-family: 'Open Sans';
   src: url("../../assets/fonts/OpenSans-Light.eot");
@@ -175,19 +191,3 @@ body {
     body .loading img {
       height: 70px;
       width: 70px; }
-
-@-webkit-keyframes shrinks {
-  0% {
-    transform: scale(1);
-    -webkit-transform: scale(1); }
-  100% {
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5); } }
-
-@keyframes shrinks {
-  0% {
-    transform: scale(1);
-    -webkit-transform: scale(1); }
-  100% {
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5); } }
