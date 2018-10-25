@@ -15,4 +15,4 @@ The following Responsive website design breakpoints have been chosen at:
 
 
 
-https://patrickmontoya.github.io/aloha/
+https://patrickmontoya.github.io/instanews/
