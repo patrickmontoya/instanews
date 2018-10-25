@@ -33,7 +33,6 @@ body {
 
 		@include tablet {
 			flex-direction: row;
-			
 		}
 
 		@include desktop {
@@ -145,8 +144,7 @@ body {
 	.legal h2 {
 			@extend %openSansLight;
 			margin: 20px;
-			color: white;
-			
+			color: white;	
 	}
 
 	.loading {
@@ -164,5 +162,4 @@ body {
 			
 		}
 	}
-
 }
