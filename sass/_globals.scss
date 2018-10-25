@@ -59,7 +59,10 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	@extend %flex;
 	background-color: #000000;
-	margin: 0;
+
+	@include mobile {
+		margin: 0;
+	}
 
 	@include desktop {
 		align-items: flex-start;
@@ -123,11 +126,10 @@ body {
 		}
 
 		@include desktop {
-			width: 25vw;
+			width: 24.779vw;
 		}
 
 		@include high-res {
-			width: 24.723vw;
 			height: 80vh;
 		}
 	}
@@ -149,31 +151,36 @@ body {
 		p {
 			@extend %openSansLight;
 			background-color: $opaque;
-			bottom: -100%;
 			position: absolute;
 			color: white;
 			text-decoration: none;
 			margin: 0;
 			padding: 5px;
 			transition: all .3s ease-in-out;
+			bottom: 0;
 
 			@include desktop {
 				line-height: 35px;
+				bottom: -100%;
 			}
 		}
 	}
 
 	.select {
 		min-height: 10vh;
-		transition: all 1s ease-in;
+		transition: all 2.5s ease-in;
+		transition-timing-function: cubic-bezier(.83,-0.23,.23,.38);
 
 			.logo img {
-				transition: all .5s ease-in;
+				width: 200px;
+				transition: all 1.89s ease-in;
+				transition-timing-function: cubic-bezier(.94,-0.18,.37,.85);
 				margin: 20px;
 
 				@include tablet {
 					width: 150px;
-					transition: all .9s ease-in;
+					transition: all 1.8s ease-in;
+					transition-timing-function: cubic-bezier(.94,-0.18,1,.42);
 				}
 
 				@include desktop {
@@ -187,5 +194,6 @@ body {
 			margin: 20px;
 			color: white;
 			
-	}	
+	}
+
 }

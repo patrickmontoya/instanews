@@ -54,8 +54,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff; }
 
 body {
-  background-color: #000000;
-  margin: 0; }
+  background-color: #000000; }
+  @media (min-width: 320px) {
+    body {
+      margin: 0; } }
   @media (min-width: 1000px) {
     body {
       -webkit-box-align: start;
@@ -105,10 +107,9 @@ body {
         height: 417px; } }
     @media (min-width: 1000px) {
       body .news-item {
-        width: 25vw; } }
+        width: 24.779vw; } }
     @media (min-width: 1920px) {
       body .news-item {
-        width: 24.723vw;
         height: 80vh; } }
   body .api-loader {
     display: -webkit-box;
@@ -126,30 +127,38 @@ body {
         bottom: 0; }
     body .api-loader p {
       background-color: rgba(0, 0, 0, 0.7);
-      bottom: -100%;
       position: absolute;
       color: white;
       text-decoration: none;
       margin: 0;
       padding: 5px;
       -webkit-transition: all .3s ease-in-out;
-      transition: all .3s ease-in-out; }
+      transition: all .3s ease-in-out;
+      bottom: 0; }
       @media (min-width: 1000px) {
         body .api-loader p {
-          line-height: 35px; } }
+          line-height: 35px;
+          bottom: -100%; } }
   body .select {
     min-height: 10vh;
-    -webkit-transition: all 1s ease-in;
-    transition: all 1s ease-in; }
+    -webkit-transition: all 2.5s ease-in;
+    transition: all 2.5s ease-in;
+    -webkit-transition-timing-function: cubic-bezier(0.83, -0.23, 0.23, 0.38);
+            transition-timing-function: cubic-bezier(0.83, -0.23, 0.23, 0.38); }
     body .select .logo img {
-      -webkit-transition: all .5s ease-in;
-      transition: all .5s ease-in;
+      width: 200px;
+      -webkit-transition: all 1.89s ease-in;
+      transition: all 1.89s ease-in;
+      -webkit-transition-timing-function: cubic-bezier(0.94, -0.18, 0.37, 0.85);
+              transition-timing-function: cubic-bezier(0.94, -0.18, 0.37, 0.85);
       margin: 20px; }
       @media (min-width: 768px) {
         body .select .logo img {
           width: 150px;
-          -webkit-transition: all .9s ease-in;
-          transition: all .9s ease-in; } }
+          -webkit-transition: all 1.8s ease-in;
+          transition: all 1.8s ease-in;
+          -webkit-transition-timing-function: cubic-bezier(0.94, -0.18, 1, 0.42);
+                  transition-timing-function: cubic-bezier(0.94, -0.18, 1, 0.42); } }
       @media (min-width: 1000px) {
         body .select .logo img {
           width: 100px; } }

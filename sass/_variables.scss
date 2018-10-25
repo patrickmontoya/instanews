@@ -4,6 +4,11 @@ $fontFamily: 'Open Sans';
 $fontWeight: '300';
 $opaque: rgba(0,0,0,0.7);
 
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1000px;
+$highRes-width: 1920px;
+
 %flex {
     display: flex;
     align-items: center;

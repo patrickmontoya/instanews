@@ -14,7 +14,7 @@ $.ajax({
   for(var i=0; i<result.results.length; i++) {
     if (result.results[i].multimedia.length < 4) {
       continue;}
-    $('.api-loader').append('<a href="'+result.results[i].url+'"><div class="news-item"><p> '+ result.results[i].abstract +' </p></div></a>').css('color', 'white');
+    $('.api-loader').append('<a target="_blank" href="'+result.results[i].url+'"><div class="news-item"><p> '+ result.results[i].abstract +' </p></div></a>').css('color', 'white');
     $('.news-item').last().css('background-image', 'url("'+result.results[i].multimedia[4].url+'")');
  newsCount++;
  if (newsCount>=12){
