@@ -1,4 +1,5 @@
 $('.dropdown').on('change', function(event){
+  $('.loading').css('display', 'flex');
   $('.api-loader').empty();
   $('.flex-container').addClass('select');
     var url = "https://api.nytimes.com/svc/topstories/v2/" + $('select').val() + ".json";
@@ -21,6 +22,7 @@ $.ajax({
    break;
  }
   }
+  $('.loading').css('display', 'none');
 }).fail(function(err) {
   throw err;
 });
