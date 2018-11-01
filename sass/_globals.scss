@@ -90,10 +90,25 @@ body {
 		display: flex;
 		justify-content: space-evenly;
 		flex-wrap: wrap;
+		
 
 		a {
 			position: relative;
 			overflow: hidden;
+			width: 100%;
+
+			@include tablet {
+				width: 33.3%;
+				height: 417px;
+			}
+	
+			@include desktop {
+				width: 25%;
+			}
+	
+			@include high-res {
+				height: 80%;
+			}
 
 			&:hover p {
 				bottom: 0;

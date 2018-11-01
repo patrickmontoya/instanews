@@ -138,7 +138,18 @@ body {
         flex-wrap: wrap; }
     body .api-loader a {
       position: relative;
-      overflow: hidden; }
+      overflow: hidden;
+      width: 100%; }
+      @media (min-width: 768px) {
+        body .api-loader a {
+          width: 33.3%;
+          height: 417px; } }
+      @media (min-width: 1000px) {
+        body .api-loader a {
+          width: 25%; } }
+      @media (min-width: 1920px) {
+        body .api-loader a {
+          height: 80%; } }
       body .api-loader a:hover p {
         bottom: 0; }
     body .api-loader p {
