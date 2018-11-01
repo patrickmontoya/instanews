@@ -121,9 +121,6 @@ body {
       body .news-item {
         width: 33.3vw;
         height: 417px; } }
-    @media (min-width: 1000px) {
-      body .news-item {
-        width: 24.779vw; } }
     @media (min-width: 1920px) {
       body .news-item {
         height: 80vh; } }
