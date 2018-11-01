@@ -11,8 +11,8 @@ $.ajax({
   url: url,
   method: 'GET',
 }).done(function(result) {
-  var newsCount = 0;
-  for(var i=0; i<result.results.length; i++) {
+  let newsCount = 0; /* Replaced var with let */
+  for(const i=0; i<result.results.length; i++) { /* replaced var with const */
     if (result.results[i].multimedia.length < 4) {
       continue;}
     $('.api-loader').append('<a target="_blank" href="'+result.results[i].url+'"><div class="news-item"><p> '+ result.results[i].abstract +' </p></div></a>').css('color', 'white');
